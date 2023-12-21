@@ -1,4 +1,4 @@
-# Undertale Text Box
+# [Undertale Text Box](https://sans-script.github.io/undertale-text-box/)
 
 This project creates a simple text animation inspired by the game Undertale using HTML, CSS and JavaScript.
 
