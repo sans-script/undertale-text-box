@@ -1,5 +1,8 @@
 /* u need to install the Determination Sans Web font on your computer*/
-
+@font-face {
+   font-family: [nome];
+   src: url([determinationsansweb-webfont.ttf]);
+}
 body {
     background: #000;
     font: normal 26pt Determination Sans Web;
