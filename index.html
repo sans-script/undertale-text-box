@@ -1,56 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <ul class="box">
-      <li><p class="ast">*</p></li>
-      <li class="list" id="text"></li>
-    </ul>
-    <ul>
-      <li class="text">* SANS 1 ATK 1 DEF</li>
-      <li class="text">* The easiest enemy.</li>
-      <li class="text">* Can only deal 1 demage.</li>
-    </ul>
-    <ul>
-      <li class="text">* You ate the Snowman Piece.</li>
-      <li class="text">* You recovered 45 HP!</li>
-    </ul>
-    <ul>
-      <li class="text">* You called for help.</li>
-      <li class="text">* But nobody came</li>
-    </ul>
-    <ul>
-      <li class="text">* You ate the Butterscotch Pie.</li>
-      <li class="text">* Your HP was maxed out.</li>
-    </ul>
-    <ul class="box">
-      <li><p class="ast">*</p></li>
-      <li class="list">You felt your sins crawling on your back</li>
-    </ul>
-    <ul class="box">
-      <li><p class="ast">*</p></li>
-      <li class="list">Despite everything, it' s still you.</li>
-    </ul>
 
-    <script>
-      var string =
-        "You feel like you' re going to have a bed time."; /* type your text here */
-      var array = string.split("");
-      var timer;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+</head>
 
-      function frameLooper() {
-        if (array.length > 0) {
-          document.getElementById("text").innerHTML += array.shift();
-        } else {
-          clearTimeout(timer);
-        }
-        loopTimer = setTimeout("frameLooper()", 60); /* change 70 for speed */
+<body>
+  <div class="song">
+    <button onclick="toggleMusic(this)">▶</button>
+    <audio id="player" autoplay="autoplay">
+      <source src="megalovania.mp3" type="audio/mp3" />
+      Seu navegador não suporta HTML5
+    </audio>
+  </div>
+
+  <ul class="box">
+    <li>
+      <p class="ast">*</p>
+    </li>
+    <li class="list" id="text"></li>
+  </ul>
+  <ul>
+    <li class="text">* SANS 1 ATK 1 DEF</li>
+    <li class="text">* The easiest enemy.</li>
+    <li class="text">* Can only deal 1 demage.</li>
+  </ul>
+  <ul>
+    <li class="text">* You ate the Snowman Piece.</li>
+    <li class="text">* You recovered 45 HP!</li>
+  </ul>
+  <ul>
+    <li class="text">* You called for help.</li>
+    <li class="text">* But nobody came</li>
+  </ul>
+  <ul>
+    <li class="text">* You ate the Butterscotch Pie.</li>
+    <li class="text">* Your HP was maxed out.</li>
+  </ul>
+  <ul class="box">
+    <li>
+      <p class="ast">*</p>
+    </li>
+    <li class="list">You felt your sins crawling on your back</li>
+  </ul>
+  <ul class="box">
+    <li>
+      <p class="ast">*</p>
+    </li>
+    <li class="list">Despite everything, it' s still you.</li>
+  </ul>
+
+  <script>
+    var string =
+      "You feel like you' re going to have a bed time."; /* type your text here */
+    var array = string.split("");
+    var timer;
+
+
+    function toggleMusic(button) {
+      var audio = document.getElementById("player");
+      if (audio.paused) {
+        // Se o áudio estiver pausado, reinicia
+        audio.play();
+        button.innerHTML = "| |";
+      } else {
+        audio.pause();
+        audio.currentTime = 0;
+        button.innerHTML = "▶";
       }
-      frameLooper();
-    </script>
-  </body>
+    }
+
+    function frameLooper() {
+      if (array.length > 0) {
+        document.getElementById("text").innerHTML += array.shift();
+      } else {
+        clearTimeout(timer);
+      }
+      loopTimer = setTimeout("frameLooper()", 60); /* change 70 for speed */
+    }
+    frameLooper();
+  </script>
+</body>
+
 </html>

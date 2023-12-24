@@ -1,10 +1,11 @@
 @font-face {
-   font-family: [nome];
-   src: url([determinationsansweb-webfont.ttf]);
+   font-family: Determination Sans Web;
+   src: url(determinationsansweb-webfont.ttf);
 }
 body {
     background: #000;
-    font: normal 26pt Determination Sans Web;
+    font-family: Determination Sans Web;
+    font-size: 26pt;
     color: #fff;
     margin: auto;
     display: grid;
@@ -48,3 +49,17 @@ body {
     width: 637px;
     height: 141px;
   }
+.song{
+  margin: 0 auto;
+}
+
+button{
+  margin-top: 20px;
+  height: 40px;
+  width: 80px;
+  font-size: 20px;
+  background-color: #000;
+  border: none;
+  color: #fff;
+  font-family: Determination Sans Web;
+}
